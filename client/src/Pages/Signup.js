@@ -61,7 +61,7 @@ const SignUp = () => {
         };
 
         try {
-            const response = await fetch('http://127.0.0.1:8080/api/auth/signup', {
+            const response = await fetch('https://job-portal-api-chi.vercel.app/api/auth/signup', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
