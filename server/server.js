@@ -12,6 +12,13 @@ var corsOptions = {
     origin: "*"
 };
 
+app.use(cors(
+    {
+        origin: ["https://job-portal-frontend-gold.vercel.app/"],
+        methods: ["POST", "GET"],
+        credentials: true
+    }
+));
 
 
 mongoose.connect('mongodb+srv://nouman:realmadrid@cluster0.akvqcci.mongodb.net/jobportal_db?retryWrites=true&w=majority')
