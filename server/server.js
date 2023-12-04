@@ -21,6 +21,8 @@ var corsOptions = {
     origin: "*"
 };
 
+mongoose.connect('mongodb+srv://nouman:realmadrid@cluster0.akvqcci.mongodb.net/jobportal_db?retryWrites=true&w=majority')
+
 app.use(cors(corsOptions));
 
 // parse requests of content-type - application/json
@@ -28,6 +30,7 @@ app.use(express.json());
 
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
+
 
 
 app.use(
