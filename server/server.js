@@ -1,20 +1,11 @@
 const express = require("express");
 const cors = require("cors");
 const cookieSession = require("cookie-session");
+const mongoose = require('mongoose')
 
 const app = express();
 const db = require("./app/models");
-const Role = db.role;
 const path = require('path');
-db.mongoose
-    .connect(db.url)
-    .then(() => {
-        console.log("Successfully connect to Mongo.");
-    })
-    .catch(err => {
-        console.error("Connection error", err);
-        process.exit();
-    });
 
 
 var corsOptions = {
@@ -43,7 +34,7 @@ app.use(
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 // simple route
 app.get("/", (req, res) => {
-    res.json({ message: "Welcome to job portal application." });
+    res.json({ message: "Welcome to job portal backend." });
 });
 
 
