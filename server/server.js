@@ -13,7 +13,7 @@ var corsOptions = {
 };
 app.use(cors(
     {
-        origin: ["https://deploy-mern-frontend.vercel.app"],
+        origin: ["https://job-portal-api-chi.vercel.app/"],
         methods: ["POST", "GET"],
         credentials: true
     }
