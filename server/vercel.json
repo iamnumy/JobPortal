@@ -4,7 +4,7 @@
     "api/*": {
       "runtime": "nodejs14.x",
       "entrypoint": "server.js"
-    }
+    },
   "builds": [
     {
       "src": "*.js",
