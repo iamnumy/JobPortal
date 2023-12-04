@@ -8,14 +8,10 @@ const db = require("./app/models");
 const path = require('path');
 
 
-var corsOptions = {
-    origin: "*"
-};
-
 app.use(cors(
     {
         origin: ["https://job-portal-frontend-gold.vercel.app/"],
-        methods: ["POST", "GET"],
+        methods: ["POST", "GET", "PUT"],
         credentials: true
     }
 ));
