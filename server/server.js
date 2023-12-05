@@ -17,6 +17,7 @@ app.use(cors(
 ));
 
 
+mongoose.connect('mongodb+srv://nouman:realmadrid@cluster0.akvqcci.mongodb.net/jobportal_db?retryWrites=true&w=majority')
 
 
 app.use(cors(corsOptions));
