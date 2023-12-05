@@ -81,7 +81,7 @@ const NavBar = () => {
                         {user && user.role === 'company' && (
                         <MenuItem onClick={handleClose} component={NavLink} to={`/AppliedJobs/${user && user.id}`}  activeClassName="active" >Applied Jobs</MenuItem>
                             )}
-                        <MenuItem onClick={handleClose}>Logout</MenuItem>
+                        <MenuItem onClick={handleClose} component={NavLink} to="/">Logout</MenuItem>
                     </Menu>
                 </Toolbar>
             </AppBar>

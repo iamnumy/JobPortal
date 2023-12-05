@@ -85,9 +85,6 @@ const Signin = () => {
                     <TextField id="password" label="Enter Password" variant="filled" type='password' fullWidth required />
                     <Button type="submit" color="primary" variant='contained' style={btnstyle} fullWidth>Sign In</Button>
                     <Typography>
-                        <Link href="#basics">Forgot Password?</Link>
-                    </Typography>
-                    <Typography>
                         Do you have an Account?
                         <RouterLink to="/signup"> Sign up</RouterLink>
                     </Typography>
