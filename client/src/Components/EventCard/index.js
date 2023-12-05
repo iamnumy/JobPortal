@@ -23,9 +23,6 @@ const EventCard = ({ event }) => {
                     {event.description}
                 </Typography>
             </CardContent>
-            <CardActions>
-                <Button size="small" color='secondary'>View Details</Button>
-            </CardActions>
         </Card>
     );
 };
