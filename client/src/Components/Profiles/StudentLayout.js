@@ -91,16 +91,16 @@ const StudentProfile = () => {
         console.log(file);
         setStudentData({ ...studentData, resume: file });
     };
-console.log("photo",studentData.photo)
-    const rightContent = (
-        <Box>
-                <ImageUpload
-                    label="Upload Profile Image"
-                    onImageSelect={handleLogoChange}
-                    initialImage={`https://job-portal-backend-two.vercel.app/${studentData.photo}`}
-                />
-        </Box>
-    );
+
+    // const rightContent = (
+    //     <Box>
+    //             <ImageUpload
+    //                 label="Upload Profile Image"
+    //                 onImageSelect={handleLogoChange}
+    //                 initialImage={`https://job-portal-backend-two.vercel.app/${studentData.photo}`}
+    //             />
+    //     </Box>
+    // );
 
     return (
         <>

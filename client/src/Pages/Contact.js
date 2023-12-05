@@ -112,7 +112,6 @@ const Contact = () => {
                 </Box>
             </Container>
         </Box>
-          <Button onClick={() => setIsLoading(!isLoading)}>Toggle Backdrop</Button>
           <Backdrop
               sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
               open={isLoading}

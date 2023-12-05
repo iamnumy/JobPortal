@@ -11,7 +11,7 @@ const path = require('path');
 app.use(cors(
     {
         origin: ["https://job-portal-frontend-gold.vercel.app"],
-        methods: ["POST", "GET", "PUT"],
+        methods: ["POST", "GET", "PUT", "DELETE"],
         credentials: true
     }
 ));

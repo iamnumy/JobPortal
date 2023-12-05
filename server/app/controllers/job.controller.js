@@ -70,13 +70,20 @@ exports.getAllJobs = async (req, res) => {
 
 exports.applyJob = async (req, res) => {
     try {
+        const { title, user_id, company_id } = req.body;
 
+        // Check if the user has already applied
+        const existingApplication = await ApplyJob.findOne({ user_id, company_id });
+        if (existingApplication) {
+            return res.status(400).json({ message: 'You have already applied for this job.' });
+        }
+
+        // If not, create a new application
         const newApplyJob = new ApplyJob({
-            position: req.body.title,
-            user_id: req.body.user_id,
-            company_id: req.body.company_id
+            position: title,
+            user_id,
+            company_id
         });
-
 
         await newApplyJob.save();
 
