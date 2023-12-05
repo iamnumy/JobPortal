@@ -29,7 +29,7 @@ const Signin = () => {
             password: event.target.password?.value,
         };
 
-        const response = await fetch('http://127.0.0.1:8080/api/auth/signin', {
+        const response = await fetch('https://job-portal-backend-two.vercel.app/api/auth/signin', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
