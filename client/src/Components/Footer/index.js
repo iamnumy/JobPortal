@@ -43,8 +43,8 @@ const Footer = () => {
                 <Grid item xs={12} sm={4}>
                     <Typography variant="h5">Why us?</Typography>
                     <Typography variant="body1">
-                        Choose StudyFin for the latest insights in finance studies, 
-                        exceptional job opportunities, and a community that supports 
+                        Choose StudyFin for the latest insights in
+                        exceptional job opportunities, and a community that supports
                         your academic and professional growth.
                     </Typography>
                 </Grid>
