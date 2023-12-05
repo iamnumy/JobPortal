@@ -63,9 +63,6 @@ const SignUp = () => {
         try {
             const response = await fetch('https://job-portal-api-taupe.vercel.app/api/auth/signup', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
                 body: new URLSearchParams(userData),
             });
 
