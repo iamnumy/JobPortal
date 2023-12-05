@@ -61,7 +61,7 @@ const SignUp = () => {
         };
 
         try {
-            const response = await fetch('https://job-portal-api-taupe.vercel.app/api/auth/signup', {
+            const response = await fetch('http://127.0.0.1:8080/api/auth/api/auth/signup', {
                 method: 'POST',
                 body: new URLSearchParams(userData),
             });
