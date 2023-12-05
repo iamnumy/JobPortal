@@ -20,7 +20,7 @@ const JobCard = ({ id, postedOn, title, type, location, companyName, company_id,
             return;
         }
 
-        const apiUrl = 'http://127.0.0.1:8080/api/apply-job';
+        const apiUrl = 'https://job-portal-backend-two.vercel.app/api/apply-job';
 
         fetch(apiUrl, {
             method: 'POST',

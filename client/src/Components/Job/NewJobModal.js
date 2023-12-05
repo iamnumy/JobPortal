@@ -124,7 +124,7 @@ const JobPost = ({ open, setOpen }) => {
                     formData.append('skills[]', skill);
                 });
 
-                const response = await fetch('http://127.0.0.1:8080/api/post-job', {
+                const response = await fetch('https://job-portal-backend-two.vercel.app/api/post-job', {
                     method: 'POST',
                     body: formData,
                 });

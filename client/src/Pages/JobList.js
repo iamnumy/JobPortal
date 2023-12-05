@@ -18,7 +18,7 @@ const JobList = () => {
     useEffect(() => {
         const fetchJobs = async () => {
             try {
-                const response = await fetch('http://127.0.0.1:8080/api/get-job');
+                const response = await fetch('https://job-portal-backend-two.vercel.app/api/get-job');
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }

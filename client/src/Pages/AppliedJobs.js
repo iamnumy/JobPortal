@@ -14,7 +14,7 @@ const AppliedJobs = () => {
         // Fetch applied jobs from the API when the component mounts or page changes
         const fetchAppliedJobs = async () => {
             try {
-                const response = await fetch(`http://127.0.0.1:8080/api/get-applied-job/${id}`);
+                const response = await fetch(`https://job-portal-backend-two.vercel.app/api/get-applied-job/${id}`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch applied jobs');
                 }

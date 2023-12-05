@@ -23,7 +23,7 @@ const CompanyProfile = () => {
     useEffect(() => {
         const fetchCompanyData = async () => {
             try {
-                const response = await fetch(`http://127.0.0.1:8080/api/get-company/${id}`);
+                const response = await fetch(`https://job-portal-backend-two.vercel.app/get-company/${id}`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch company data');
                 }
@@ -40,7 +40,7 @@ const CompanyProfile = () => {
     const updateCompany = async () => {
         try {
             // Update company details
-            await fetch(`http://127.0.0.1:8080/api/update-company/${id}`, {
+            await fetch(`https://job-portal-backend-two.vercel.app/api/update-company/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -53,7 +53,7 @@ const CompanyProfile = () => {
                 const formData = new FormData();
                 formData.append('logo', logo);
 
-                await fetch(`http://127.0.0.1:8080/api/upload-logo/${id}`, {
+                await fetch(`https://job-portal-backend-two.vercel.app/api/upload-logo/${id}`, {
                     method: 'POST',
                     body: formData,
                 });

@@ -21,7 +21,7 @@ const StudentProfile = () => {
     useEffect(() => {
         const fetchStudentData = async () => {
             try {
-                const response = await fetch(`http://127.0.0.1:8080/api/get-student/${id}`);
+                const response = await fetch(`https://job-portal-backend-two.vercel.app/api/get-student/${id}`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch student data');
                 }
@@ -47,7 +47,7 @@ const StudentProfile = () => {
     };
 
     const updateProfile = async () => {
-        const response = await fetch(`http://127.0.0.1:8080/api/update-student/${id}`, {
+        const response = await fetch(`https://job-portal-backend-two.vercel.app/api/update-student/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -60,7 +60,7 @@ const StudentProfile = () => {
         const formData = new FormData();
         formData.append('photo', profileImage);
 
-        const response = await fetch(`http://127.0.0.1:8080/api/upload-student-photo/${id}`, {
+        const response = await fetch(`https://job-portal-backend-two.vercel.app/api/upload-student-photo/${id}`, {
             method: 'POST',
             body: formData,
         });
@@ -71,7 +71,7 @@ const StudentProfile = () => {
         const formData = new FormData();
         formData.append('cv', cvFile);
 
-        const response = await fetch(`http://127.0.0.1:8080/api/upload-student-cv/${id}`, {
+        const response = await fetch(`https://job-portal-backend-two.vercel.app/api/upload-student-cv/${id}`, {
             method: 'POST',
             body: formData,
         });
@@ -98,7 +98,7 @@ console.log("photo",studentData.photo)
                 <ImageUpload
                     label="Upload Profile Image"
                     onImageSelect={handleLogoChange}
-                    initialImage={`http://127.0.0.1:8080/${studentData.photo}`}
+                    initialImage={`https://job-portal-backend-two.vercel.app/${studentData.photo}`}
                 />
             )}
         </Box>
