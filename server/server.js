@@ -8,13 +8,7 @@ const db = require("./app/models");
 const path = require('path');
 
 
-app.use(cors(
-    {
-        origin: ["https://job-portal-frontend-gold.vercel.app"],
-        methods: ["POST", "GET", "PUT"],
-        credentials: true
-    }
-));
+
 
 
 mongoose.connect('mongodb+srv://nouman:realmadrid@cluster0.akvqcci.mongodb.net/jobportal_db?retryWrites=true&w=majority')
