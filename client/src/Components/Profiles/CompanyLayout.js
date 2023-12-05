@@ -23,7 +23,7 @@ const CompanyProfile = () => {
     useEffect(() => {
         const fetchCompanyData = async () => {
             try {
-                const response = await fetch(`https://job-portal-backend-two.vercel.app/get-company/${id}`);
+                const response = await fetch(`https://job-portal-backend-two.vercel.app/api/get-company/${id}`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch company data');
                 }
