@@ -94,13 +94,11 @@ const StudentProfile = () => {
 console.log("photo",studentData.photo)
     const rightContent = (
         <Box>
-            {studentData.photo !== undefined && (
                 <ImageUpload
                     label="Upload Profile Image"
                     onImageSelect={handleLogoChange}
                     initialImage={`https://job-portal-backend-two.vercel.app/${studentData.photo}`}
                 />
-            )}
         </Box>
     );
 
