@@ -7,6 +7,7 @@ import JobCard from '../Components/Job/JobCard';
 import NewJobModal from '../Components/Job/NewJobModal';
 import NavBar from '../Components/NavBar/NavBar';
 import Footer from '../Components/Footer/index.js';
+import axios from 'axios'; // Make sure to install axios
 
 const JobList = () => {
     const [isNewJobModalOpen, setNewJobModalOpen] = useState(false);
@@ -14,11 +15,23 @@ const JobList = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const jobsPerPage = 5;
 
+    const handleSearch = async (jobType, jobNature) => {
+        try {
+            const response = await axios.get('http://127.0.0.1:8080/api/jobs/search', {
+                params: { type: jobType, nature: jobNature }
+            });
+            console.log(response.data)
+            setJobs(Array.isArray(response.data.searchData) ? response.data.searchData : []);
+        } catch (error) {
+            console.error('Error fetching data: ', error);
+        }
+    };
+
     // Fetching jobs data from the API
     useEffect(() => {
         const fetchJobs = async () => {
             try {
-                const response = await fetch('https://job-portal-backend-two.vercel.app/api/get-job');
+                const response = await fetch('http://127.0.0.1:8080/api/get-job');
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
@@ -51,8 +64,8 @@ const JobList = () => {
             <NewJobModal open={isNewJobModalOpen} setOpen={setNewJobModalOpen}/>
             <Grid container justifyContent={"center"}>
                 <Grid item xs={10}>
-                    <SearchBar />
-                    {currentJobs.map(job => <JobCard key={job.id} {...job} />)}
+                    <SearchBar onSearch={handleSearch} />
+                    {currentJobs.length > 0 && currentJobs.map(job => <JobCard key={job.id} {...job} />)}
                     <Pagination
                         count={Math.ceil(jobs.length / jobsPerPage)}
                         page={currentPage}
