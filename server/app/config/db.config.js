@@ -1,3 +1,3 @@
 module.exports = {
-    url: "mongodb://127.0.0.1:27017/jobportal_db"
+    url: "mongodb://https://job-portal-backend-two.vercel.app/api/jobportal_db"
 };

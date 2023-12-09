@@ -17,7 +17,7 @@ const JobList = () => {
 
     const handleSearch = async (jobType, jobNature) => {
         try {
-            const response = await axios.get('http://127.0.0.1:8080/api/jobs/search', {
+            const response = await axios.get('https://job-portal-backend-two.vercel.app/api/jobs/search', {
                 params: { type: jobType, nature: jobNature }
             });
             console.log(response.data)
@@ -31,7 +31,7 @@ const JobList = () => {
     useEffect(() => {
         const fetchJobs = async () => {
             try {
-                const response = await fetch('http://127.0.0.1:8080/api/get-job');
+                const response = await fetch('https://job-portal-backend-two.vercel.app/api/get-job');
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
