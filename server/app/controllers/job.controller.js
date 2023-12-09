@@ -119,3 +119,40 @@ exports.getAllAppliedJobs = async (req, res) => {
         res.status(500).json({ status: false, message: 'Internal Server Error' });
     }
 };
+
+exports.searchJobs = async (req, res) => {
+    try {
+        const { type, nature } = req.query;
+        let query = {};
+
+        if (type) {
+            query.type = type;
+        }
+        if (nature) {
+            query.nature = nature;
+        }
+
+
+        const jobs = await Job.find(query).populate('company_id');
+        const formattedJobs = jobs.map(job => {
+            return {
+                id: job._id,
+                title: job.title,
+                type: job.type,
+                location: job.nature,
+                qualification: job.qualification,
+                experience: job.experience,
+                postedOn: job.created,
+                description: job.description,
+                companyName: job.company_id ? job.company_id.name : null,
+                skills: job.skills,
+                shift: job.shift,
+            };
+        });
+        console.log(formattedJobs)
+
+        res.status(200).json({ status: true, message: 'Search Result', searchData: formattedJobs });
+    } catch (error) {
+        res.status(500).send(error.message);
+    }
+};

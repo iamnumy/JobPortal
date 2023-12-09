@@ -60,7 +60,7 @@ const AppliedJobs = () => {
                             {appliedJobs.map((job) => (
                                 <React.Fragment key={job.id}>
                                     <Grid item xs={12} md={4}><Typography>{job.position}</Typography></Grid>
-                                    <Grid item xs={12} md={4}><Typography>{job.companyName}</Typography></Grid>
+                                    <Grid item xs={12} md={4}><Typography>{job.username}</Typography></Grid>
                                     <Grid item xs={12} md={4}><Typography>{formatDate(job.appliedDate)}</Typography></Grid>
                                 </React.Fragment>
                             ))}
